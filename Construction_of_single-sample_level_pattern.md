@@ -1,6 +1,6 @@
 ## Construction_of_single-sample_level_pattern
 
-![Illustration of single-sample level pattern construction.](supplementary/supp-sweet-v1.pdf)
+![supp-sweet](supp-sweet.png)
 
 **Figure 1.** Illustration of single-sample level pattern construction.  
 (a) Quantification of sample weights to obtain the expression matrix sample weight $W^{(S_i)}$ for each sample $S_i$.  
