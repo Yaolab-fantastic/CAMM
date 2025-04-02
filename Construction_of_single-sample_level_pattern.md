@@ -39,7 +39,7 @@ To determine the statistical significance of each edge **$E_{ij}^{(S_i)}$**, we 
 
 where **$\mu$** and **$\sigma$** denote the overall mean and standard deviation of edge values computed across all single-sample networks. An edge is considered statistically significant in the context of sample **$S_i$** if its absolute z-score surpasses a critical threshold (e.g., 1.960 or 2.576, corresponding to **$P \leq 0.05$** or **$0.01$**).
 
-Finally, in our framework, we obtain a collection of sample-specific edge matrices, denoted as **$\mathcal{E}^m = \{ \mathbf{E}_i^m \}_{i=1}^{n}$**, by applying a sparsity-inducing threshold to each correlation-based network. This is achieved using a modality-dependent parameter **$\lambda_r^m$**, which facilitates interpretability while maintaining biologically relevant connections.
+Finally, in our framework, we obtain a collection of sample-specific edge matrices, denoted as <img src="https://latex.codecogs.com/svg.image?\mathcal{E}^m=\{\mathbf{E}_i^m\}_{i=1}^{n}" style="height:20px;"/> , by applying a sparsity-inducing threshold to each correlation-based network. This is achieved using a modality-dependent parameter **$\lambda_r^m$**, which facilitates interpretability while maintaining biologically relevant connections.
 
 </div>
 
