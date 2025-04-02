@@ -1,7 +1,5 @@
 # STMM: Sample-aware Trustworthy Multi-View Multi-Modal Fusion for Diagnosis of Brain Disorders with Imaging Transcriptomics
 
-![STMM_framework](STMM_framework.png)
-
 ## Requirements
 
 - Python 3.6
