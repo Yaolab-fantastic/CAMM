@@ -13,25 +13,37 @@ In this study, we adopted the SWEET method<sup>[1]</sup> to build individualized
 
 For each sample **$S_i$**, the average PCC value, denoted as **$\mu_{\text{PCC}}^{(S_i)}$**, is calculated and subsequently used to derive a sample-specific weight **$W^{(S_i)}$** that reflects its similarity to the overall cohort. The sample weight is formulated as:
 
-**\[ \mathbf{W}^{(S_i)} = \frac{\mu_{\text{PCC}}^{(S_i)} - \min \left( \mu_{\text{PCC}}^{(S)} \right) + \alpha}{\max \left( \mu_{\text{PCC}}^{(S)} \right) - \min \left( \mu_{\text{PCC}}^{(S)} \right) + \alpha} \tag{1} \]**
+**\[
+\mathbf{W}^{(S_i)} = \frac{\mu_{\text{PCC}}^{(S_i)} - \min \left( \mu_{\text{PCC}}^{(S)} \right) + \alpha}{\max \left( \mu_{\text{PCC}}^{(S)} \right) - \min \left( \mu_{\text{PCC}}^{(S)} \right) + \alpha}
+\tag{1}
+\]**
 
 where **$\mu_{\text{PCC}}^{(S_i)}$** represents the average PCC between sample **$S_i$** and all other **$n-1$** samples, **$\mu_{\text{PCC}}^{(S)}$** is the collection of mean PCCs from all samples in the cohort, and **$\alpha$** is a small constant (e.g., 0.01) added to the denominator to avoid division by zero.
 
 Next, the PCC between features **$i$** and **$j$**, denoted as **$E_{ij}^{(n)}$**, is calculated across all **$n$** samples to form the aggregate network structure (Figure 1(b) and (c)). To derive a perturbed version of the network for a specific sample **$S_i$**, its expression profile is duplicated and added to the original sample group, after which the PCC is recomputed over the **$n + 1$** samples. The resulting perturbed edge is denoted as **$E_{ij}^{(n+S_i)}$**.
+
 To personalize the network for each sample, we incorporate the sample-specific weight **$W^{(S_i)}$** to adjust for subpopulation effects. The final edge score for the single-sample network of **$S_i$**, denoted by **$E_{ij}^{(S_i)}$**, is computed as:
 
-**\[ \mathbf{E}_{ij}^{(S_i)} = W^{(S_i)} \times n \times K \left( E_{ij}^{(n+S_i)} - E_{ij}^{(n)} \right) + E_{ij}^{(n)} \tag{2} \]**
+**\[
+\mathbf{E}_{ij}^{(S_i)} = W^{(S_i)} \times n \times K \left( E_{ij}^{(n+S_i)} - E_{ij}^{(n)} \right) + E_{ij}^{(n)}
+\tag{2}
+\]**
 
-where **$n$** represents the total number of case samples used to scale the correlation difference, and **$K$** is a predefined balance coefficient (empirically set to 10\% of the total sample size) to control the contribution of the sample-specific perturbation.
+where **$n$** represents the total number of case samples used to scale the correlation difference, and **$K$** is a predefined balance coefficient (empirically set to 10% of the total sample size) to control the contribution of the sample-specific perturbation.
 
-According to the systematic evaluation reported in<sup>[1]</sup>, setting the balance parameter **$K$** to 10\% resulted in optimal median values for both the average degree exponent **$\gamma$** and the coefficient of determination **$R^2$**. A higher sample weight **$W^{(S_i)}$** implies that sample **$S_i$** shares stronger similarity with the remaining cohort members, indicating potential membership in a larger subpopulation. Conversely, a lower weight may reflect distinctiveness, suggesting that the sample might belong to a rarer sub-cohort. This weighting strategy is designed to mitigate the influence of sample-level heterogeneity on differential correlation estimation.
+According to the systematic evaluation reported in<sup>[1]</sup>, setting the balance parameter **$K$** to 10% resulted in optimal median values for both the average degree exponent **$\gamma$** and the coefficient of determination **$R^2$**. A higher sample weight **$W^{(S_i)}$** implies that sample **$S_i$** shares stronger similarity with the remaining cohort members, indicating potential membership in a larger subpopulation. Conversely, a lower weight may reflect distinctiveness, suggesting that the sample might belong to a rarer sub-cohort. This weighting strategy is designed to mitigate the influence of sample-level heterogeneity on differential correlation estimation.
+
 To determine the statistical significance of each edge **$E_{ij}^{(S_i)}$**, we conduct a z-score–based test:
 
-**\[ \mathbf{z}\left(E_{ij}^{(S_i)}\right) = \frac{E_{ij}^{(S_i)} - \mu}{\sigma} \tag{3} \]**
+**\[
+\mathbf{z}\left(E_{ij}^{(S_i)}\right) = \frac{E_{ij}^{(S_i)} - \mu}{\sigma}
+\tag{3}
+\]**
 
 where **$\mu$** and **$\sigma$** denote the overall mean and standard deviation of edge values computed across all single-sample networks. An edge is considered statistically significant in the context of sample **$S_i$** if its absolute z-score surpasses a critical threshold (e.g., 1.960 or 2.576, corresponding to **$P \leq 0.05$** or **$0.01$**).
 
 Finally, in our framework, we obtain a collection of sample-specific edge matrices, denoted as **$\mathcal{E}^m = \{ \mathbf{E}_i^m \}_{i=1}^{n}$**, by applying a sparsity-inducing threshold to each correlation-based network. This is achieved using a modality-dependent parameter **$\lambda_r^m$**, which facilitates interpretability while maintaining biologically relevant connections.
+
 
 </div>
 
