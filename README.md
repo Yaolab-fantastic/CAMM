@@ -1,12 +1,9 @@
-# Trustworthy Enhanced Multi-view Multi-modal Alzheimer’s Disease Prediction with Brain-wide Imaging Transcriptomics Data
-
-## Note
-This conference is expanding into journal. In order to protect innovation, the code will not be released now.
+# STMM: Sample-aware Trustworthy Multi-View Multi-Modal Fusion for Diagnosis of Brain Disorders with Imaging Transcriptomics
 
 # Overview
-Brain transcriptomics provides insights into the molecular mechanisms by which the brain coordinates its functions and processes. However, existing multimodal methods for predicting Alzheimer's disease (AD) primarily rely on imaging and sometimes genetic data, often neglecting the transcriptomic basis of brain. Furthermore, while striving to integrate complementary information between modalities, most studies overlook the informativeness disparities between modalities. Here, we propose TMM, a trusted multiview multimodal graph attention framework for AD diagnosis, using extensive brain-wide transcriptomics and imaging data. 
+Brain transcriptomics provides insights into the molecular mechanisms by which the brain coordinates its functions and processes. However, existing multimodal methods for brain disease prediction mainly rely on imaging and sometimes genetic data, often neglecting the transcriptomic basis. Moreover, most studies overlook both modality informativeness and its intra-sample disparities. We propose STMM, a sample-aware trusted multiview multimodal framework that integrates limited yet informative brain-wide transcriptomics with imaging data. STMM constructs view-specific brain regional co-function networks, employs graph attention and cross-modal attention for representation and fusion, and introduces a novel true-false-harmonized class probability strategy for adaptive confidence refinement. Experiments on ADNI and ADHD-200 datasets demonstrate STMM’s superior performance and its ability to uncover meaningful brain biomarkers.
 
-![Framework](frameworkTMM.png)
+![STMM_framework](STMM_framework.png)
 
 ## Requirements
 
@@ -17,7 +14,7 @@ Brain transcriptomics provides insights into the molecular mechanisms by which t
 - numpy
 
 ## Data Preparation
-The data used can be obtained from ADNI. We provide the data of NC vs. AD.
+The data used can be obtained from ADNI and ADHD-200. We provide the data of NC vs. AD.
 
 ## Disclaimer
 This tool is for research purposes and not approved for clinical use.
@@ -27,15 +24,5 @@ This tool is developed in Yao Lab. We thank all the contributors and collaborato
 
 # Ciatation
 
-If you use this framework in your research, please cite our work:
-
- ``` 
-@article{cong2024trustworthy,
-  title={Trustworthy Enhanced Multi-view Multi-modal Alzheimer's Disease Prediction with Brain-wide Imaging Transcriptomics Data},
-  author={Cong, Shan and Fan, Zhoujie and Liu, Hongwei and Zhang, Yinghan and Wang, Xin and Luo, Haoran and Yao, Xiaohui},
-  journal={arXiv preprint arXiv:2406.14977},
-  year={2024}
-}
- ``` 
 
 
