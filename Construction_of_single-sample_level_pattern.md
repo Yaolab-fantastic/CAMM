@@ -34,7 +34,7 @@ According to the systematic evaluation reported in<sup>[1]</sup>, setting the ba
 To determine the statistical significance of each edge **$E_{ij}^{(S_i)}$**, we conduct a z-score–based test:
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\mathbf{z}\left(E_{ij}^{(S_i)}\right)=\frac{E_{ij}^{(S_i)}-\mu}{\sigma}" width="300"/>
+  <img src="https://latex.codecogs.com/svg.image?\mathbf{z}\left(E_{ij}^{(S_i)}\right)=\frac{E_{ij}^{(S_i)}-\mu}{\sigma}" style="height: 40px;"/>
 </p>
 
 where **$\mu$** and **$\sigma$** denote the overall mean and standard deviation of edge values computed across all single-sample networks. An edge is considered statistically significant in the context of sample **$S_i$** if its absolute z-score surpasses a critical threshold (e.g., 1.960 or 2.576, corresponding to **$P \leq 0.05$** or **$0.01$**).
