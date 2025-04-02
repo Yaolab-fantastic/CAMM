@@ -4,7 +4,7 @@
 
 <div align="justify">
 
-Brain-wide transcriptomics data are sourced from the Allen human brain atlas (AHBA, \url{human.brain-map.org}), including over 58k probes sampled across 3,702 brain locations from six donors.  
+Brain-wide transcriptomics data are sourced from the Allen human brain atlas (AHBA, (https://human.brain-map.org/)), including over 58k probes sampled across 3,702 brain locations from six donors.  
 We use the abagen toolbox<sup>[1]</sup> for data preprocessing and employ the AAL atlas to map brain locations to ROIs, resulting in a number of 15,633 genes expressed across 116 ROIs.  
 To ensure that the transcriptomic knowledge closely aligns with the underlying mechanisms of the corresponding brain diseases, we further filter the genes to focus on those associated with disease risk. Specifically, we utilize two large-scale meta-GWAS results: one from AD (21,982 AD cases, 41,944 controls) from the International Genomics of Alzheimer's Project (IGAP)<sup>[2]</sup> and another for ADHD<sup>[3]</sup> (20,183 ADHD cases, 35,191 controls).  
 We use the MAGMA<sup>[4]</sup> to derive gene-level **$p$**-values from SNP-level meta-GWAS results and keep nominally significant ones (i.e., **$p<0.05$**). This process yields a total of 1,216 genes expressed across 116 ROIs for AD and 1,524 genes expressed across the same 116 ROIs for ADHD. These expression datasets are used to construct the corresponding T-RRI edge matrices for the AD and ADHD prediction tasks, respectively.
@@ -23,7 +23,7 @@ We utilized two brain disorder datasets in our study two brain disease cohorts (
 
 <div align="justify">
 
-The preprocessed [18F]Florbetapir PET (AV45) scans were obtained from the LONI database (\url{adni.loni.usc.edu}). Prior to download, all PET images underwent standard preprocessing procedures as described by Jagust et al.<sup>[5]</sup> and Yan et al.<sup>[6]</sup>, including averaging, alignment to a standard anatomical space, resampling to a common voxel grid, smoothing to achieve a uniform resolution, and normalization to a cerebellar gray matter reference region, resulting in standardized uptake value ratio (SUVR) images. After download, each PET image was rigidly aligned to the corresponding T1-weighted MRI scan acquired at the same visit. The images were then spatially normalized to the Montreal Neurological Institute (MNI) space using transformation parameters derived from MRI segmentation, with a final voxel resolution of 2 × 2 × 2 mm. Regional amyloid burden values were subsequently extracted at the region-of-interest (ROI) level using the Automated Anatomical Labeling (AAL) atlas implemented in MarsBaR<sup>[7]</sup>.
+The preprocessed [18F]Florbetapir PET (AV45) scans were obtained from the LONI database (https://adni.loni.usc.edu/). Prior to download, all PET images underwent standard preprocessing procedures as described by Jagust et al.<sup>[5]</sup> and Yan et al.<sup>[6]</sup>, including averaging, alignment to a standard anatomical space, resampling to a common voxel grid, smoothing to achieve a uniform resolution, and normalization to a cerebellar gray matter reference region, resulting in standardized uptake value ratio (SUVR) images. After download, each PET image was rigidly aligned to the corresponding T1-weighted MRI scan acquired at the same visit. The images were then spatially normalized to the Montreal Neurological Institute (MNI) space using transformation parameters derived from MRI segmentation, with a final voxel resolution of 2 × 2 × 2 mm. Regional amyloid burden values were subsequently extracted at the region-of-interest (ROI) level using the Automated Anatomical Labeling (AAL) atlas implemented in MarsBaR<sup>[7]</sup>.
 
 </div>
 
@@ -31,7 +31,7 @@ The preprocessed [18F]Florbetapir PET (AV45) scans were obtained from the LONI d
 
 <div align="justify">
 
-The preprocessed [18F]FDG-PET scans were obtained from the LONI database (\url{adni.loni.usc.edu}). After download, each scan was aligned to the corresponding T1-weighted MRI acquired at the same visit for each participant. The aligned PET images were then spatially normalized to the MNI space using transformation parameters from the MRI segmentation, with a final voxel resolution of 2 × 2 × 2 mm. Measurements of glucose metabolism were subsequently extracted at the ROI level using the AAL atlas implemented in MarsBaR<sup>[7]</sup>. More details can be found at Yao et al.<sup>[8]</sup>.
+The preprocessed [18F]FDG-PET scans were obtained from the LONI database (https://adni.loni.usc.edu/). After download, each scan was aligned to the corresponding T1-weighted MRI acquired at the same visit for each participant. The aligned PET images were then spatially normalized to the MNI space using transformation parameters from the MRI segmentation, with a final voxel resolution of 2 × 2 × 2 mm. Measurements of glucose metabolism were subsequently extracted at the ROI level using the AAL atlas implemented in MarsBaR<sup>[7]</sup>. More details can be found at Yao et al.<sup>[8]</sup>.
 
 </div>
 
@@ -39,7 +39,7 @@ The preprocessed [18F]FDG-PET scans were obtained from the LONI database (\url{a
 
 <div align="justify">
 
-To investigate brain-associated MRI imaging phenotypes, we analyzed data from the ADNI database (\url{adni.loni.usc.edu}), including MRI scans from participants<sup>[9]</sup>. Each participant underwent at least two baseline MP-RAGE scans at 1.5 T, following the ADNI MRI protocol<sup>[10]</sup>. The scans were processed using voxel-based morphometry (VBM), a widely employed automated MRI analysis method<sup>[11]</sup>.  
+To investigate brain-associated MRI imaging phenotypes, we analyzed data from the ADNI database (https://adni.loni.usc.edu/), including MRI scans from participants<sup>[9]</sup>. Each participant underwent at least two baseline MP-RAGE scans at 1.5 T, following the ADNI MRI protocol<sup>[10]</sup>. The scans were processed using voxel-based morphometry (VBM), a widely employed automated MRI analysis method<sup>[11]</sup>.  
 VBM analysis was conducted with SPM12, which generated unmodulated, normalized grey matter (GM) density maps with a voxel resolution of 1 × 1 × 1 mm, smoothed using a 10 mm full-width at half-maximum (FWHM) Gaussian kernel. For each participant, two independently processed maps were averaged to obtain a mean GM density map.  
 Regional GM density values were extracted in the MNI space using the MarsBaR ROI toolbox<sup>[7]</sup>.  
 Both ADNI dataset and ADHD-200 dataset were preprocessed with the same way.
@@ -50,8 +50,8 @@ Both ADNI dataset and ADHD-200 dataset were preprocessed with the same way.
 
 <div align="justify">
 
-The preprocessed fMRI scans were obtained from the NITRC (\url{https://www.nitrc.org/}).  
-The original fMRI data were preprocessed using a public toolbox named DPABI<sup>[12]</sup> (for Data Processing \& Analysis of Brain Imaging, \url{http://rfmri.org/dpabi}). The preprocessing steps were as follows: (1) remove the first 10 volumes to ensure that the BOLD signal was stable; (2) slice timing, correct the difference due to acquisition times between slices in the volume; (3) head motion correction; (4) normalization, register the data to the EPI standard template and resample it to **$3.0 \times 3.0 \times 3.0$** mm; and (5) spatial smoothing with a 6-mm full width at half maximum (FWHM) Gaussian kernel. Subjects whose head movement exceeded 2.0 mm were excluded.
+The preprocessed fMRI scans were obtained from the NITRC (https://www.nitrc.org/).  
+The original fMRI data were preprocessed using a public toolbox named DPABI<sup>[12]</sup> (for Data Processing \& Analysis of Brain Imaging, (http://rfmri.org/dpabi). The preprocessing steps were as follows: (1) remove the first 10 volumes to ensure that the BOLD signal was stable; (2) slice timing, correct the difference due to acquisition times between slices in the volume; (3) head motion correction; (4) normalization, register the data to the EPI standard template and resample it to **$3.0 \times 3.0 \times 3.0$** mm; and (5) spatial smoothing with a 6-mm full width at half maximum (FWHM) Gaussian kernel. Subjects whose head movement exceeded 2.0 mm were excluded.
 
 </div>
 
