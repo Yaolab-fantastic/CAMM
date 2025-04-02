@@ -44,7 +44,6 @@ where **$\mu$** and **$\sigma$** denote the overall mean and standard deviation 
 
 Finally, in our framework, we obtain a collection of sample-specific edge matrices, denoted as **$\mathcal{E}^m = \{ \mathbf{E}_i^m \}_{i=1}^{n}$**, by applying a sparsity-inducing threshold to each correlation-based network. This is achieved using a modality-dependent parameter **$\lambda_r^m$**, which facilitates interpretability while maintaining biologically relevant connections.
 
-
 </div>
 
 ---
