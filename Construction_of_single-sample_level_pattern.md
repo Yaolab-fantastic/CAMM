@@ -13,10 +13,9 @@ In this study, we adopted the SWEET method<sup>[1]</sup> to build individualized
 
 For each sample **$S_i$**, the average PCC value, denoted as **$\mu_{\text{PCC}}^{(S_i)}$**, is calculated and subsequently used to derive a sample-specific weight **$W^{(S_i)}$** that reflects its similarity to the overall cohort. The sample weight is formulated as:
 
-**\[
-\mathbf{W}^{(S_i)} = \frac{\mu_{\text{PCC}}^{(S_i)} - \min \left( \mu_{\text{PCC}}^{(S)} \right) + \alpha}{\max \left( \mu_{\text{PCC}}^{(S)} \right) - \min \left( \mu_{\text{PCC}}^{(S)} \right) + \alpha}
-\tag{1}
-\]**
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\mathbf{W}^{(S_i)}=\frac{\mu_{\text{PCC}}^{(S_i)}-\min\left(\mu_{\text{PCC}}^{(S)}\right)+\alpha}{\max\left(\mu_{\text{PCC}}^{(S)}\right)-\min\left(\mu_{\text{PCC}}^{(S)}\right)+\alpha}" width="300"/>
+</p>
 
 where **$\mu_{\text{PCC}}^{(S_i)}$** represents the average PCC between sample **$S_i$** and all other **$n-1$** samples, **$\mu_{\text{PCC}}^{(S)}$** is the collection of mean PCCs from all samples in the cohort, and **$\alpha$** is a small constant (e.g., 0.01) added to the denominator to avoid division by zero.
 
@@ -24,10 +23,9 @@ Next, the PCC between features **$i$** and **$j$**, denoted as **$E_{ij}^{(n)}$*
 
 To personalize the network for each sample, we incorporate the sample-specific weight **$W^{(S_i)}$** to adjust for subpopulation effects. The final edge score for the single-sample network of **$S_i$**, denoted by **$E_{ij}^{(S_i)}$**, is computed as:
 
-**\[
-\mathbf{E}_{ij}^{(S_i)} = W^{(S_i)} \times n \times K \left( E_{ij}^{(n+S_i)} - E_{ij}^{(n)} \right) + E_{ij}^{(n)}
-\tag{2}
-\]**
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\mathbf{E}_{ij}^{(S_i)}=W^{(S_i)}\times{n}\times{K}\left(E_{ij}^{(n+S_i)}-E_{ij}^{(n)}\right)+E_{ij}^{(n)}" width="300"/>
+</p>
 
 where **$n$** represents the total number of case samples used to scale the correlation difference, and **$K$** is a predefined balance coefficient (empirically set to 10% of the total sample size) to control the contribution of the sample-specific perturbation.
 
@@ -35,10 +33,9 @@ According to the systematic evaluation reported in<sup>[1]</sup>, setting the ba
 
 To determine the statistical significance of each edge **$E_{ij}^{(S_i)}$**, we conduct a z-score–based test:
 
-**\[
-\mathbf{z}\left(E_{ij}^{(S_i)}\right) = \frac{E_{ij}^{(S_i)} - \mu}{\sigma}
-\tag{3}
-\]**
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\mathbf{z}\left(E_{ij}^{(S_i)}\right)=\frac{E_{ij}^{(S_i)}-\mu}{\sigma}" width="300"/>
+</p>
 
 where **$\mu$** and **$\sigma$** denote the overall mean and standard deviation of edge values computed across all single-sample networks. An edge is considered statistically significant in the context of sample **$S_i$** if its absolute z-score surpasses a critical threshold (e.g., 1.960 or 2.576, corresponding to **$P \leq 0.05$** or **$0.01$**).
 
