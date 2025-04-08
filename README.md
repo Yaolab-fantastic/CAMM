@@ -1,5 +1,9 @@
 # STMM: Sample-aware Trustworthy Multi-View Multi-Modal Fusion for Diagnosis of Brain Disorders with Imaging Transcriptomics
 
+## Code and Data Availability
+
+The source code related to this paper will be made publicly available upon acceptance. At this stage, we have provided the preprocessed example data, pretrained model, and the method for single-sample network construction to facilitate understanding and reproducibility. If you have any questions or require further information, please feel free to contact us at haoran.luo@polyu.edu.hk.
+
 ## Requirements
 
 - Python 3.6
