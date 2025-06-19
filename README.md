@@ -1,4 +1,4 @@
-# STMM: Sample-aware Trustworthy Multi-View Multi-Modal Fusion for Diagnosis of Brain Disorders with Imaging Transcriptomics
+# CAMM: Confidence-Aligned Multiview Multimodal Fusion for Brain Disorders Prediction with Imaging Transcriptomics
 
 ## Code and Data Availability
 
