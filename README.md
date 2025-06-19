@@ -6,7 +6,7 @@ The source code related to this paper will be made publicly available upon accep
 
 ## Requirements
 
-- Python 3.6
+- Python 3.8
 - PyTorch 1.10.2
 - PyTorch Geometric
 - scikit-learn
