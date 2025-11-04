@@ -1,8 +1,7 @@
 # CAMM: Confidence-Aligned Multiview Multimodal Fusion for Brain Disorders Prediction with Imaging Transcriptomics
 
-## Supplemental Information
-
-The supplementary materials for the article are in SuppInformation_CAMM
+## Supplementary Information
+Supplementary information for this manuscript is available in the file SuppInformation_CAMM.pdf.
 
 ## Code and Data Availability
 
