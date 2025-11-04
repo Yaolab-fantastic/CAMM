@@ -1,5 +1,7 @@
 # CAMM: Confidence-Aligned Multiview Multimodal Fusion for Brain Disorders Prediction with Imaging Transcriptomics
 
+## The supplementary materials for the article are in supp_camm
+
 ## Code and Data Availability
 
 The source code related to this paper will be made publicly available upon acceptance. At this stage, we have provided the preprocessed example data, pretrained model, and the method for single-sample network construction to facilitate understanding and reproducibility. If you have any questions or require further information, please feel free to contact us at haoran.luo@polyu.edu.hk.
