@@ -5,7 +5,7 @@ Supplementary information for this manuscript is available in the file SuppInfor
 
 ## Code and Data Availability
 
-The source code related to this paper will be made publicly available upon acceptance. At this stage, we have provided the preprocessed example data, pretrained model, and the method for single-sample network construction to facilitate understanding and reproducibility. If you have any questions or require further information, please feel free to contact us at haoran.luo@polyu.edu.hk.
+The source code related to this paper is now publicly available. We have provided the preprocessed example data, pretrained model (including the checkpoint), and methods for constructing both single-sample and transcriptomic networks to facilitate understanding and reproducibility. The available resources include Python scripts such as Construct_single_sample_network.py, Construct_transcriptomic_network.py, train.py, and utils.py, along with the Example_data.py, model files, and supplementary materials (e.g., Supplnformation_CAMM.pdf). If you have any questions or require further information, please feel free to contact us at haoran.luo@polyu.edu.hk.
 
 ## Requirements
 
